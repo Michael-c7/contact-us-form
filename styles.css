@@ -2,17 +2,19 @@
 
 :root {
     /*color scheme*/
-    --purple-050:#9b59b6;
-    --purple-100:#8e44ad;
+    --purple-050:#5f27cd;
+    --purple-100:#341f97;
 
-    --orange-050:#f39c12;
-    --orange-100:#e67e22;
+    --red-050:#ff6b6b;
+    --red-100:#ee5253;
 
     --white-050:#ecf0f1;
 
-    --gray-050:#bdc3c7;
-    --gray-100:#95a5a6;
-    --gray-150:#7f8c8d;
+    --gray-050:#c8d6e5;
+    --gray-100:#8395a7;
+    --gray-150:#576574;
+
+    --black-050:#222f3e;
 }
 
 *,
@@ -30,6 +32,14 @@ body {
 
 .header {
     text-align: center;
+    margin:2rem 0 2rem 0;
+}
+
+.header h2 {
+    color:var(--gray-150);
+    font-weight: 400;
+    font-size:1rem;
+    margin-top:0.5rem;
 }
 
 .contact-info {
@@ -37,18 +47,29 @@ body {
 }
 
 .contact-info__header h2 {
-    /* color:var(--gray-050); */
     margin-bottom:1rem;
 }
 
-
 .contact-info__header p {
-    /* color:var(--gray-050); */
+    color:var(--gray-050);
+    letter-spacing: 0.5px;
     margin-bottom:3rem;
 }
 
+.contact-card__our-info {
+    display:flex;
+    flex-direction: column;
+    margin-bottom:3rem;
+}
 
+.contact-card__our-info .fa {
+    color:var(--red-050);
+    margin: 3rem 1rem 0 0;
+}
 
+.contact-card__our-info .fa-phone {
+    margin-top:0;
+}
 
 .contact-card {
     background-color:#fff;
@@ -65,5 +86,29 @@ body {
     color:#fff;
     background-color:var(--purple-050);
     border-radius: 10px;
+}
 
+.footer .fa {
+    margin:0 1rem;
+    padding:0.5rem;
+    border-radius: 100%;
+}
+
+.footer .fa:first-of-type {
+    margin-left:0rem;
+    padding:0;
+}
+
+.footer .fa:hover {
+    background-color:var(--red-050);
+    cursor: pointer;
+}
+
+
+
+
+/*contact form*/
+
+.contact-form {
+    
 }
