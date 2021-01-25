@@ -25,4 +25,45 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-}  
+    background-color:var(--white-050);
+}
+
+.header {
+    text-align: center;
+}
+
+.contact-info {
+    padding:1.5rem;
+}
+
+.contact-info__header h2 {
+    /* color:var(--gray-050); */
+    margin-bottom:1rem;
+}
+
+
+.contact-info__header p {
+    /* color:var(--gray-050); */
+    margin-bottom:3rem;
+}
+
+
+
+
+.contact-card {
+    background-color:#fff;
+    width:90%;
+    margin:0 auto;
+    display:flex;
+    /*row for desktop view*/
+    flex-direction: column;
+    border-radius: 10px;
+    padding:5px;
+}
+
+.contact-info {
+    color:#fff;
+    background-color:var(--purple-050);
+    border-radius: 10px;
+
+}

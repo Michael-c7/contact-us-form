@@ -7,38 +7,95 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
-        <header>
+        <header class="header">
             <h1>Contact Us</h1>
             <h2>Any question or remark? Just write a message!</h2>
         </header>
 
-        <article>
+        <article class="contact-card">
             <section class="contact-info">
-                <header>
+                <header class="contact-info__header">
                     <h2>Contact Information</h2>
-                    <h3>Fill up the form and our Team will get back to you within 24 hours.</h3>
+                    <p>Fill up the form and our Team will get back to you within 24 hours.</p>
                 </header>
 
                 <div>
-                    <div><!--telephone icon-->+0123 4567 8910</div>
-                    <div><!--email-->Hello@flowbase.com</div>
-                    <div><!--street pin-->102 Street 2714</div>
+                    <div>
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <span>+0123 4567 8910</span>
+                    </div>
+                    <div>
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <span>Hello@flowbase.com</span>
+                    </div>
+                    <div>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <span>102 Street 2714</span>
+                    </div>
                 </div>
 
                 <footer>
-                    <!--facebook,
-                    twitter,
-                    instagram,
-                    linkedIn
-                    icons here-->
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
                 </footer>
             </section>
 
-            <section class="contact-form">
+            <form class="contact-form">
+                <div>
+                    <label class="first-name">
+                        <span class="first-name__text">First Name</span>
+                        <input class="first-name__input" type="text" placeholder="John" name="first-name">
+                    </label>
 
-            </section>
+                    <label class="last-name">
+                        <span class="last-name__text">Last Name</span>
+                        <input class="last-name__input" type="text" placeholder="John" name="last-name">
+                    </label>
+                </div>
+
+                <div>
+                    <label class="email">
+                        <span class="email__text">Mail</span>
+                        <input class="email__input" type="email" placeholder="example@aol.com" name="email">
+                    </label>
+
+                    <label class="phone">
+                        <span class="phone__text">Phone</span>
+                        <input class="phone__input" type="tel" placeholder="+12 345 567 67 78" name="phone">
+                    </label>
+                </div>
+
+                <div>
+                    <h2>What type of website do you need?</h2>
+                    <div>
+                        <input type="radio" id="web-design" name="website" value="web-design">
+                        <label for="web-design">Web design</label>
+
+                        <input type="radio" id="web-development" name="website" value="web-development">
+                        <label for="web-development">Web Development</label>
+
+                        <input type="radio" id="logo-design" name="website" value="logo-design">
+                        <label for="logo-design">Logo Design</label>
+
+                        <input type="radio" id="other" name="website" value="other">
+                        <label for="other">Other</label>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="message" class="message__text">Message</label>
+                    <textarea id="message" name="message" placeholder="Write your message..."></textarea>
+                </div>
+
+                <button class="send-msg" type="submit">Send Message</button>
+                
+
+            </form>
         </article>
 
         
