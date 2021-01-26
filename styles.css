@@ -107,8 +107,8 @@ body {
 
 
 
-/*contact form*/
 
+/*contact form*/
 .contact-form {
     position: relative;
 }
@@ -132,6 +132,8 @@ body {
 }
 
 .form-item-text {
+    color:#000;
+    font-weight: 600;
     font-size:0.85rem;
     margin-bottom: 0.5rem;
 }
@@ -147,12 +149,84 @@ body {
     width:100%;
     height:2px;
     background-color:rgba(160, 158, 158, 0.45);
-    top:125%;
-    transform:translateY(-125%);
+    top:135%;
+    transform:translateY(-135%);
 }
 
 .form-item-input::placeholder {
     color:gray;
+    font-family: 'Roboto', sans-serif;
+}
+
+.selection-width {
+    position: relative;
+    width:85%;
+    margin:0 auto 0 auto;
+}
+
+
+input[type="radio"] {
+    position: relative;
+    -webkit-appearance: none;
+    appearance: none;
+    width:15px;
+    height:15px;
+    background-color:#fff;
+    color:#fff;
+    border:2px solid rgba(160, 158, 158, 0.8);
+    border-radius: 100%;
+    vertical-align: -1px;
+}
+
+input[type="radio"]::before {
+    content:"✔";
+    position: absolute;
+    font-size: 0.6rem;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    visibility: hidden;
+}
+
+input[type="radio"]:checked::before {
+    /* Use `visibility` instead of `display`
+    to avoid recalculating layout */
+    visibility: visible;
+  }
+
+  input[type="radio"]:disabled {
+    border-color: black;
+    background: #ddd;
+    color: gray;
+  }
+
+input[type="radio"]:checked {
+    border-color:var(--purple-100);
+    background-color:var(--purple-100);
+}
+
+textarea {
+    resize:none;
+    border:none;
+    overflow: auto;
+    /* width:100%; */
+}
+
+.message-section {
+    position: relative;
+    /* background:gray; */
+    width:85%;
+    margin:2rem auto;
+}
+
+.message-section::after {
+    content:"";
+    position: absolute;
+    width:100%;
+    height:2px;
+    background-color:rgba(160, 158, 158, 0.45);
+    top:120%;
+    transform:translateY(-120%);
 }
 
 
@@ -161,10 +235,12 @@ body {
     position: relative;
     left:50%;
     transform: translateX(-50%);
-
+    font-size:1rem;
     border:none;
     color:#fff;
     background-color:var(--purple-100);
     padding:1rem 2rem;
     border-radius: 10px;
+    margin:2rem 0;
+    cursor: pointer;
 }
