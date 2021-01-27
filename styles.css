@@ -30,6 +30,10 @@ body {
     background-color:var(--white-050);
 }
 
+
+
+
+
 .header {
     text-align: center;
     margin:2rem 0 2rem 0;
@@ -79,7 +83,7 @@ body {
     /*row for desktop view*/
     flex-direction: column;
     border-radius: 10px;
-    padding:5px;
+    padding:10px;
 }
 
 .contact-info {
@@ -89,23 +93,34 @@ body {
 }
 
 .footer .fa {
+    position: relative;
     margin:0 1rem;
-    padding:0.5rem;
-    border-radius: 100%;
-}
-
-.footer .fa:first-of-type {
-    margin-left:0rem;
-    padding:0;
-}
-
-.footer .fa:hover {
-    background-color:var(--red-050);
+    z-index:10;
     cursor: pointer;
 }
 
+.footer .fa::after {
+    content:"";
+    position: absolute;
+    background-color:none;
+    width:30px;
+    height:30px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+    border-radius:100%;
+    z-index:-1;
+}
+
+.footer .fa:hover::after {
+    background-color:var(--red-050);
+    
+}
 
 
+.footer .fa:first-of-type {
+    margin-left:0rem;
+}
 
 
 /*contact form*/
@@ -161,9 +176,17 @@ body {
 .selection-width {
     position: relative;
     width:85%;
-    margin:0 auto 0 auto;
+    margin:0 auto;
 }
 
+.selection-width h2 {
+    position: relative;
+    font-size:1rem;
+}
+
+.selection-width input {
+    margin-left: 1rem;
+}
 
 input[type="radio"] {
     position: relative;
@@ -176,6 +199,7 @@ input[type="radio"] {
     border:2px solid rgba(160, 158, 158, 0.8);
     border-radius: 100%;
     vertical-align: -1px;
+    cursor: pointer;
 }
 
 input[type="radio"]::before {
@@ -192,13 +216,13 @@ input[type="radio"]:checked::before {
     /* Use `visibility` instead of `display`
     to avoid recalculating layout */
     visibility: visible;
-  }
+}
 
   input[type="radio"]:disabled {
     border-color: black;
     background: #ddd;
     color: gray;
-  }
+}
 
 input[type="radio"]:checked {
     border-color:var(--purple-100);
@@ -209,15 +233,25 @@ textarea {
     resize:none;
     border:none;
     overflow: auto;
-    /* width:100%; */
+}  
+
+.message-text {
+    margin:0;
+}
+
+.message-text,
+.message-input {
+    width:100%;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.25px;
 }
 
 .message-section {
     position: relative;
-    /* background:gray; */
     width:85%;
-    margin:2rem auto;
+    margin:2rem auto 2rem auto;
 }
+
 
 .message-section::after {
     content:"";
@@ -228,8 +262,6 @@ textarea {
     top:120%;
     transform:translateY(-120%);
 }
-
-
 
 .send-msg {
     position: relative;
@@ -243,4 +275,117 @@ textarea {
     border-radius: 10px;
     margin:2rem 0;
     cursor: pointer;
+}
+
+
+
+
+/*Desktop view*/
+@media(min-width:1000px) {
+    .contact-card {
+        max-width:60rem;
+    }
+
+    .contact-info__header p {
+        width:40ch;
+    }
+    
+    .contact-card {
+        display:flex;
+        /*row for desktop view*/
+        flex-direction: row;
+    }
+
+    .footer {
+        position: relative;
+        top:40%;
+        transform:translateY(-40%);
+    }
+
+    
+
+
+    
+    /*contact form*/
+    .contact-form {
+        position: relative;
+    }
+    
+    .contact-form__section {
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        margin:2rem 0;
+    }
+    
+    .info-1-section {
+        flex-direction:row;
+        justify-content: space-between;
+        padding:1rem
+    }
+
+    .contact-form__section > * {
+        margin:0.5rem 0;
+    }
+    
+    .form-item {
+        position: relative;
+        display:flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+    
+    .form-item-text {
+        color:#000;
+        font-weight: 600;
+        font-size:0.85rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .form-item-input {
+        font-size:0.85rem;
+        border:none;
+    }
+    
+    .selection-width {
+        position: relative;
+        width:100%;
+        margin:0 auto;
+    }
+
+    .selection-width h2 {
+        /* position: relative; */
+        left:-50%;
+        transform: translateX(50%);
+        padding-left: 1rem;
+    }
+    
+    .selection-width input {
+        margin-left: 1rem;
+    }
+
+    .message-text {
+        margin:0;
+    }
+    
+    .message-text,
+    .message-input {
+        width:100%;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: 0.25px;
+    }
+    
+    .message-section {
+        position: relative;
+        width:100%;
+        margin:2rem auto 2rem auto;
+        padding-left: 1rem;
+    }
+    
+    .send-msg {
+        position: relative;
+        left:100%;
+        transform: translateX(-100%);
+        margin:2rem 0;
+    }
 }
